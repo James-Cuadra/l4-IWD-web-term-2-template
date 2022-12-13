@@ -21,6 +21,7 @@ body {
     /* update to suit your type choices */
     color: #141414;
     /* base text colour - update to suit your design */
+
 }
 
 /* Improves default font styles for forms  */
@@ -35,6 +36,8 @@ textarea {
 
 html {
     box-sizing: border-box;
+
+    scroll-behavior: smooth;
 }
 
 *,
@@ -110,7 +113,7 @@ a:active {
 /* navigation (using flexbox) */
 .page-header {
     background-color: #fff;
-    background-image: url("../images/splashimg.jpg");
+    background-image: url("../images/splashimg.jpg"); /*CREDIT IMAGE*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -148,10 +151,13 @@ a:active {
 
 
 /* page header */
-
+/* small screen code */
 .page-nav {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    /* Improve load times - do not re-render navbar every scroll */
+    will-change: transform;
 }
 
 .page-nav ul {
@@ -188,6 +194,7 @@ a:active {
     color: #000;
 }
 
+/* larger screen code */
 @media screen and (min-width: 760px) {
     .page-nav ul {
         flex-wrap: nowrap;
@@ -201,10 +208,12 @@ a:active {
 
 /* main layout */
 .container-content {
-    max-width: 600px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+    /* for equal spacing between top of content and bottom due to header padding */
+    padding-bottom: 20px;
 }
 
 /* styling for the section content */
@@ -270,6 +279,58 @@ a:active {
 
 /* form styling */
 
+.contact-me .container-content {
+    text-align: center;
+}
+
+form label {
+    text-align: left;
+    display: block;
+    /* instead of inline */
+    padding-bottom: 0.2em;
+    padding-top: 1em;
+    /* Keep label and input area closer to box */
+    margin-left: 20px;
+}
+
+
+form input,
+form textarea {
+    padding: 10px;
+    font-size: 1em;
+    /* lighter grey, less visually heavy */
+    border: 1px solid rgb(124, 124, 124);
+    border-radius: 0.2em;
+    /* make sure our fields aren't too wide or not wide enough */
+    min-width: 90%;
+    max-width: 90%;
+}
+
+form input[type="submit"] {
+    /* https://developer.mozilla.org/en/docs/Web/CSS/Attribute_selectors */
+    /* if you used display:block; this would go right across the page - if you use inline-block the button will only be as wide as the text and the padding */
+    min-width: 0;
+    /* turn off a minimum width for the button and let the browser work it out */
+    background-color: rgb(5, 163, 45);
+    border: 0;
+    border-radius: 0.2em;
+    padding: 13px 30px;
+    margin: 10px 0px;
+    /* top and bottom, left and right */
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.2s ease;
+    /* less jarring transition from initial colour to hover colour */
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: rgb(2, 124, 33);
+    /* you don't have to change the colour too much for hover states - just make it a little bit lighter or darker */
+}
+
 
 /* footer */
 
@@ -279,4 +340,17 @@ a:active {
     height: 10vh;
     align-items: center;
     justify-content: center;
+}
+
+.footer-switch {
+    width: auto;
+    height: auto;
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+}
+
+button.js-lightmode {
+    background-image: url("../images/light.jpg");
+    background-size: cover;
 }
