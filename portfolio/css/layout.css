@@ -21,6 +21,7 @@ body {
     /* update to suit your type choices */
     color: #141414;
     /* base text colour - update to suit your design */
+    transition: all 1s ease;
 
 }
 
@@ -62,6 +63,7 @@ h2 {
     /* Google font, web safe font, generic fallback */
     letter-spacing: normal;
     text-transform: capitalize;
+    transition: all 2s ease;
 }
 
 h1 {
@@ -84,6 +86,7 @@ h3 {
 p {
     margin: 0;
     padding: 0;
+    transition: all 1s ease;
 }
 
 a:link {
@@ -113,7 +116,8 @@ a:active {
 /* navigation (using flexbox) */
 .page-header {
     background-color: #fff;
-    background-image: url("../images/splashimg.jpg"); /*CREDIT IMAGE*/
+    background-image: url("../images/splashimg.jpg");
+    /*CREDIT IMAGE*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -132,6 +136,18 @@ a:active {
     padding: 10px;
 }
 
+.header-content h1+p {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    border-radius: 0.4em;
+    font-size: 1.35rem;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 .header-content a {
     display: inline-block;
     margin-top: 10px;
@@ -143,6 +159,16 @@ a:active {
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.header-content a:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+}
+
+.header-content a:active {
+    transform: translateY(0px);
 }
 
 .header-content h1 {
@@ -218,6 +244,36 @@ a:active {
 
 /* styling for the section content */
 
+blockquote {
+    font-style: italic;
+    transition: all 1s ease;
+}
+
+table {
+    transition: all 1s ease;
+    margin: 10px;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #8fbc8f;
+}
+
+tr:nth-child(odd) {
+    background-color: #006400;
+}
+
+th {
+    background-color: #556b2f;
+    color: white;
+}
 
 /* background colours for sections */
 .about-me {
@@ -343,14 +399,52 @@ form input[type="submit"]:hover {
 }
 
 .footer-switch {
-    width: auto;
-    height: auto;
+    width: 50px;
+    height: 50px;
     position: fixed;
+    background: rgb(113, 168, 250);
     bottom: 20px;
-    right: 20px; 
+    right: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
 }
 
-button.js-lightmode {
-    background-image: url("../images/light.jpg");
-    background-size: cover;
+
+.footer-switch:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+}
+
+.footer-switch:active {
+    transform: translateY(0px);
+}
+
+.js-modify-page .about-me {
+    background-color: #153110;
+}
+
+.js-modify-page .cucumber {
+    background-color: #202022;
+}
+
+.js-modify-page .image-gallery {
+    background-color: #153110;
+}
+
+.js-modify-page .contact-me {
+    background-color: #202022;
+}
+
+.js-modify-page body {
+    color: #EBEBEB;
+    background-color: #000;
+}
+
+.js-modify-page p a {
+    color: #7b6df7;
+}
+
+.js-modify-page .page-footer {
+    background: #153110;
 }
