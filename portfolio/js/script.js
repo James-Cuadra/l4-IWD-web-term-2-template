@@ -13,7 +13,7 @@ var UKcurrenthour = currenttime.getHours() + timedifference;
 
 // do a conditional
 
-var emailmessage = "It <strong>is</strong> currently my working hours";
+var emailmessage = "It is currently <strong>within</strong> my working hours";
 
 if (UKcurrenthour < 9 || UKcurrenthour > 22) {
   emailmessage = "It is currently <strong>outside</strong> my working hours, I will respond as soon as possible.";
