@@ -218,6 +218,7 @@ a:active {
 /* page header */
 /* small screen code */
 .page-nav {
+    z-index: 3;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
