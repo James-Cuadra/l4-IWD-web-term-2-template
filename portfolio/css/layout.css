@@ -260,6 +260,18 @@ a:active {
     color: #000;
 }
 
+.page-nav img {
+    border-radius: 50%;
+    border: 2px solid black;
+    position: fixed;
+    object-fit: cover;
+    display: flex;
+    right: 1px;
+    top: 1px;
+    pointer-events: none;
+    opacity: 80%;
+}
+
 /* larger screen code */
 @media screen and (min-width: 760px) {
     .page-nav ul {
