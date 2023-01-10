@@ -124,7 +124,7 @@ a:active {
 .page-header {
     background-color: #fff;
     background-image: url("../images/splashimg.jpg");
-    /*CREDIT IMAGE*/
+    /*image credit - https://wall.alphacoders.com/big.php?i=1240143*/
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -302,6 +302,7 @@ blockquote {
 }
 
 table {
+    color: #EBEBEB;
     transition: all 1s ease;
     margin: 10px;
     border-collapse: collapse;
@@ -440,7 +441,6 @@ form input[type="submit"]:hover {
     /* you don't have to change the colour too much for hover states - just make it a little bit lighter or darker */
 }
 
-
 /* footer */
 
 .page-footer {
@@ -450,6 +450,7 @@ form input[type="submit"]:hover {
     align-items: center;
     justify-content: center;
 }
+
 
 .footer-switch {
     width: 50px;
@@ -463,6 +464,9 @@ form input[type="submit"]:hover {
     cursor: pointer;
 }
 
+.linkedin-button {
+    padding: 8px;
+}
 
 .footer-switch:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.7);
@@ -504,4 +508,8 @@ form input[type="submit"]:hover {
 
 .js-modify-page .page-footer {
     background: #153110;
+}
+
+.js-modify-page .header-content a {
+    color: black;
 }

@@ -4,7 +4,7 @@ var currenttime = new Date();
 
 // retrieve offset from GMT in mins and convert to hour
 
-var timedifference = currenttime.getTimezoneOffset()/60;
+var timedifference = currenttime.getTimezoneOffset() / 60;
 
 // add this to the current hour to get the relative time in UK
 
@@ -27,26 +27,30 @@ getheading.insertAdjacentHTML(
 );
 
 
-var icon = document.getElementById("switch");
+var icon = document.getElementById("switch"); //get dark/light mode icon
+var button = document.getElementById("button") //get dark/light mode button for onclick, prevents issues with click detection
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { //detect if browser preference for dark mode is active and if so goes to darkmode
+  document.documentElement.classList.toggle("js-modify-page");
+  icon.src = 'images/dark.png';
+  icon.className = "dark";
+}
+
 
 // This changePage function runs whenever the button is clicked on - you can see where it's being 'called' in line 34 and 35 below.
 
 function changePage() {
   // 'toggle' means swop between adding and removing the class from the class list for the HTML element. You will be able to see this happening in the web developer tools.
   document.documentElement.classList.toggle("js-modify-page");
-  if(icon.className!="light")
-    {
-        icon.src='images/light.png';
-        icon.className="light";
-    }
-    else if(icon.className=="light")
-    {
-        icon.src='images/dark.png';
-        icon.className="dark";
-    }
+  if (icon.className != "light") {
+    icon.src = 'images/light.png';
+    icon.className = "light";
+  } else if (icon.className == "light") {
+    icon.src = 'images/dark.png';
+    icon.className = "dark";
+  }
 }
 
 // create a click event on our new button that runs a function whenever the button is clicked
 
-icon.addEventListener("click", changePage);
-
+button.addEventListener("click", changePage);
