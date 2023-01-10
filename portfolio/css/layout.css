@@ -302,7 +302,6 @@ blockquote {
 }
 
 table {
-    color: #EBEBEB;
     transition: all 1s ease;
     margin: 10px;
     border-collapse: collapse;
@@ -317,10 +316,12 @@ td {
 
 tr:nth-child(even) {
     background-color: #8fbc8f;
+    color: #000;
 }
 
 tr:nth-child(odd) {
     background-color: #006400;
+    color: white;
 }
 
 th {
