@@ -175,7 +175,7 @@ a:active {
     padding: 10px;
 }
 
-.header-content h1+p {
+.header-content h3 {
     width: -moz-fit-content;
     width: fit-content;
     margin: auto;
@@ -294,6 +294,9 @@ a:active {
     padding-bottom: 20px;
 }
 
+.container-content p {
+    padding-bottom: 10px;
+}
 /* styling for the section content */
 
 blockquote {
